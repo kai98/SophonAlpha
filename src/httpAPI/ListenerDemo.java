@@ -27,13 +27,30 @@ public class ListenerDemo {
 		exAPI[] combo;
 		while(true) {
 			//combo version:
-			System.out.print (getTime());
+//			System.out.print (getTime());
+//			combo = getCombo();
+//			for(exAPI api : combo) 
+//				System.out.print(api+"  ");
+//			for(exAPI api : combo)
+//				api.save();
+//			System.out.println();
+//			
+//			//simpleSynpase
+//			simpleSynapse(combo[0],combo[3]);
+//			simpleSynapse(combo[2],combo[1]);
+//			
+//			metronome(time);
+//			time = System.currentTimeMillis();
+			//String Version:
+			String str = "";
+			str += (getTime());
 			combo = getCombo();
 			for(exAPI api : combo) 
-				System.out.print(api+"  ");
+				str+=(api+"  ");
 			for(exAPI api : combo)
 				api.save();
-			System.out.println();
+			str+="\n";
+			System.out.print(str);
 			
 			//simpleSynpase
 			simpleSynapse(combo[0],combo[3]);
@@ -41,6 +58,7 @@ public class ListenerDemo {
 			
 			metronome(time);
 			time = System.currentTimeMillis();
+			
 		}
 	}
 	
