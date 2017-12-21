@@ -25,6 +25,7 @@ public class ListenerDemo {
 	
 	
 	public static void main(String [] args) throws IOException, JSONException, InterruptedException {
+		System.out.println("--------------------SophonAlpha--------------------");
 		double time = System.currentTimeMillis();
 		exAPI[] combo;
 		while(true) {
