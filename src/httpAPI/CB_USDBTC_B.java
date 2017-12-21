@@ -4,10 +4,12 @@ import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import comp.exAPI;
+
 // java-json.jar required;
 
-public class CB_USDBTC_B extends exAPI{
-    public CB_USDBTC_B() throws IOException, JSONException {
+public class cb_usdbtc_B extends exAPI{
+    public cb_usdbtc_B() throws IOException, JSONException {
         exchange = "CB-B";
         base = "BTC";
         counter = "USD";

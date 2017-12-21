@@ -1,10 +1,12 @@
-package httpAPI;
+package comp;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.json.JSONException;
+
+import httpAPI.*;
 
 public class ListenerDemo {
 	public static int sleepTime = 5000;
@@ -13,10 +15,10 @@ public class ListenerDemo {
 		// Listening API array: 
 		
     	exAPI[] combo = new exAPI[4]; 
-    	combo[0] = new BP_USDBTC_A();
-    	combo[1] = new BP_USDBTC_B();
-    	combo[2] = new CB_USDBTC_A();
-    	combo[3] = new CB_USDBTC_B();
+    	combo[0] = new bp_usdbtc_A();
+    	combo[1] = new bp_usdbtc_B();
+    	combo[2] = new cb_usdbtc_A();
+    	combo[3] = new cb_usdbtc_B();
     	
     	return combo;
     }
@@ -42,19 +44,19 @@ public class ListenerDemo {
 //			metronome(time);
 //			time = System.currentTimeMillis();
 			//String Version:
-			String str = "";
+			String str = "\n";
 			str += (getTime());
 			combo = getCombo();
 			for(exAPI api : combo) 
 				str+=(api+"  ");
 			for(exAPI api : combo)
 				api.save();
-			str+="\n";
 			System.out.print(str);
 			
 			//simpleSynpase
 			simpleSynapse(combo[0],combo[3]);
 			simpleSynapse(combo[2],combo[1]);
+			
 			
 			metronome(time);
 			time = System.currentTimeMillis();
@@ -68,6 +70,9 @@ public class ListenerDemo {
 			return false;
 		double askPrice = Double.parseDouble(ask.amount);
 		double bidPrice = Double.parseDouble(bid.amount);
+		double diff = bidPrice - askPrice;
+		System.out.print(" Diff: " + diff);
+		
 		if(askPrice < bidPrice) {
 			System.out.println("WOW");
 			System.out.println("Ask: "+ask);
