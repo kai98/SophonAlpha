@@ -1,4 +1,4 @@
-package httpAPI;
+package comp;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -71,6 +71,22 @@ public class exAPI {
 			return null;
 		}
 		catch(JSONException e) {
+			e.printStackTrace();
+			return null;
+		}
+		finally {
+			is.close();
+		}
+	}
+	
+	public String getStr (String url) throws IOException{
+		InputStream is = null;
+		try {
+			is = new URL(url).openStream();
+			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+			String strText = readAll(rd);
+			return strText;
+		}		catch(IOException e){
 			e.printStackTrace();
 			return null;
 		}
