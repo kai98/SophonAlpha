@@ -5,8 +5,10 @@ import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class BP_USDBTC_A extends exAPI{
-	public BP_USDBTC_A() throws IOException, JSONException{
+import comp.exAPI;
+
+public class bp_usdbtc_A extends exAPI{
+	public bp_usdbtc_A() throws IOException, JSONException{
 	        exchange = "BP-A";
 	        base = "BTC";
 	        counter = "USD";

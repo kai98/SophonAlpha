@@ -15,11 +15,12 @@ public class hb_ethbtc_A extends exAPI{
         counter = "BTC";
         link = "https://api.huobi.pro/market/detail/merged?symbol=ethbtc";
         
-   //     JSONObject json = getInfo(link);
-        String str = getStr(link);
-        System.out.println(str);
-  //      data = getData(json);
-  //      amount = getAmount((JSONObject) json.get("tick"),"bid");
+        JSONObject json = getInfo(link);
+ //       String str = enhancedInfo(link);
+   //     System.out.println(str);
+        data = getData(json);
+ //       amount = getAmount((JSONObject) json.get("tick"),"bid");
+        System.out.println(((JSONObject) json.get("tick")).get("bid"));
         date = getDate();
         time = getTime();
     }
