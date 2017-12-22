@@ -9,6 +9,7 @@ import comp.exAPI;
 
 public class bp_usdbtc_B extends exAPI{
 	public bp_usdbtc_B() throws IOException, JSONException{
+		fee = -0.25/100;
 	        exchange = "BP-B";
 	        base = "BTC";
 	        counter = "USD";

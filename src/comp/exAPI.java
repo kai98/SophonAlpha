@@ -28,6 +28,7 @@ public class exAPI {
 	public String link;
 	public String data;
 	public String time;
+	public double fee; // fee is a double. + if it's Ask, - if it's Bid
 	
 
 	public String toString() {

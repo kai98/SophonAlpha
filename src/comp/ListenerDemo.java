@@ -71,12 +71,13 @@ public class ListenerDemo {
 		// if no data recive from json, return false;
 		if(ask.amount.compareTo("NoAmount") == 0 || bid.amount.compareTo("NoAmount") == 0)
 			return false;
-		double askPrice = Double.parseDouble(ask.amount);
-		double bidPrice = Double.parseDouble(bid.amount);
+		double askPrice = Double.parseDouble(ask.amount)*(1+ask.fee);
+		double bidPrice = Double.parseDouble(bid.amount)*(1+bid.fee);
 		double diff = bidPrice - askPrice;
 		System.out.print(" Diff: " + diff);
 		
-		double gap = 0;
+		// gap should be a percentage that diff have with ask;
+		double gap = 0/diff;
 		if(bidPrice - askPrice > gap) {
 			System.out.println("WOW");
 			System.out.println("Ask: "+ask);

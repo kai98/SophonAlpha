@@ -10,6 +10,7 @@ import comp.exAPI;
 
 public class hb_ethbtc_B extends exAPI{
     public hb_ethbtc_B() throws IOException, JSONException {
+    	fee = -0.2/100;
         exchange = "HB_B";
         base = "ETH";
         counter = "BTC";
