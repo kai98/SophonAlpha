@@ -3,10 +3,12 @@ package comp;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.json.JSONException;
 
-import httpAPI.*;
+import bitstamp.*;
+import coinbase.*;
+import bittrex.*;
+import huobi.*;
 
 public class ListenerDemo {
 	public static int sleepTime = 5000;
@@ -15,10 +17,10 @@ public class ListenerDemo {
 		// Listening API array: 
 		
     	exAPI[] combo = new exAPI[4]; 
-    	combo[0] = new bp_usdbtc_A();
-    	combo[1] = new bp_usdbtc_B();
-    	combo[2] = new cb_usdbtc_A();
-    	combo[3] = new cb_usdbtc_B();
+    	combo[0] = new bp_ethbtc_A();
+    	combo[1] = new bp_ethbtc_B();
+    	combo[2] = new hb_ethbtc_A();
+    	combo[3] = new hb_ethbtc_B();
     	
     	return combo;
     }
@@ -74,7 +76,8 @@ public class ListenerDemo {
 		double diff = bidPrice - askPrice;
 		System.out.print(" Diff: " + diff);
 		
-		if(askPrice < bidPrice) {
+		double gap = 0;
+		if(bidPrice - askPrice > gap) {
 			System.out.println("WOW");
 			System.out.println("Ask: "+ask);
 			System.out.println("Bid: "+bid);

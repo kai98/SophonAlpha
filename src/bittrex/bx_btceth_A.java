@@ -1,4 +1,4 @@
-package httpAPI;
+package bittrex;
 
 import java.io.IOException;
 
